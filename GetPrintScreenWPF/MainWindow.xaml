@@ -1,0 +1,44 @@
+﻿<Window x:Class="GetPrintScreenWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GetPrintScreenWPF"
+        mc:Ignorable="d"
+        Title="WWW Printscreen maker" Height="250" Width="500" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+
+        <StackPanel Grid.Row="0" Grid.Column="0" Margin="10">
+        
+        
+        <TextBlock Text="Podaj adres WWW:" ></TextBlock>
+            <TextBox x:Name="wwwTextBlock" FontSize="20" Text="https://github.com/maciuquk?tab=repositories" Height="70" VerticalAlignment="Center" TextWrapping="Wrap" ></TextBox>
+
+            <TextBlock Text="Podaj folder docelowy:" ></TextBlock>
+            <TextBox x:Name="folderTextBlock" Height="33" FontSize="20" VerticalAlignment="Center" Text="C:\Printscreeny" ></TextBox>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Button x:Name="LoadExcelFile" Content="Zrób i zapisz printscreena" Height="40" Margin="0,10,5,10" Grid.Column="0" Grid.Row="0"></Button>
+                <Button x:Name="OpenLastFolder" Content="Otwórz ostatni folder" Height="40" Margin="5,10,0,10" Grid.Column="1" Grid.Row="0" IsEnabled="False" ></Button>
+            </Grid>
+            
+            
+        </StackPanel>
+    </Grid>
+</Window>
