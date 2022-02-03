@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.IO;
 
 namespace GetPrintScreenWPF.Services
 {
     internal class Files
     {
-        public static string ExtractName(string wwwPath)
+        internal static string ExtractName(string wwwPath)
         {
             var parts = wwwPath.Split('/');
             var name = parts[2].Split('.');
@@ -21,6 +17,20 @@ namespace GetPrintScreenWPF.Services
                 }
             }
             return name[0];
+        }
+
+        internal static void CreateFolder(string directoryPath)
+        {
+            Directory.CreateDirectory(directoryPath);
+        }
+
+        internal static void OpenFolder(string folderPath)
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            process.StartInfo.UseShellExecute = true;
+            process.StartInfo.FileName = folderPath;
+            process.StartInfo.Arguments = @" ";
+            process.Start();
         }
     }
 }
